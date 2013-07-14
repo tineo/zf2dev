@@ -2,13 +2,13 @@
 return array (
 	'doctrine' => array (
 		'connection' => array (
-			/*'orm_default' => array (
+			'orm_default' => array (
 				'driverClass' => 'Doctrine\DBAL\Driver\PDOSqlite\Driver',
 				'params' => array (
 				'path' => ''.getcwd().'/data/apoyo.db' 
 				)
-			),*/
-			'orm_default'=> array (
+			),
+			/*'orm_default'=> array (
 				'driverClass' => 'Doctrine\DBAL\Driver\PDOMySql\Driver',
 					'params' => array(
 						'host'     => 'localhost',
@@ -17,7 +17,7 @@ return array (
 						'password' => '12077752',
 						'dbname'   => 'test1'
 				)
-			),
+			),*/
 		),
 		'driver' => array (
 			'Backend_driver' => array (
