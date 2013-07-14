@@ -1,0 +1,59 @@
+<?php
+echo $this->doctype ();
+?>
+
+<html>
+<head>
+<meta charset="utf-8">
+    <?php //echo $this->headTitle('ZF2 '. $this->translate('Skeleton Application'))->setSeparator(' - ')->setAutoEscape(false)?>
+    <?php echo $this->headTitle('Apoyo Publicitario')?>
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+    
+    <?php  $this->headMeta()->appendName('description', $this->layout()->description )?>
+	<?php  $this->headMeta()->appendName('author', 'César Gutiérrez Tineo')?>
+	<?php  $this->headMeta()->appendName('ZendFramework', \Zend\Version\Version::VERSION)?>
+	<?php  $this->headMeta()->appendName('keywords', $this->layout()->keywords)?>
+	<?php  $this->headMeta()->appendName('robots', 'index, follow, all')?>
+	<?php  $this->headMeta()->appendName('expires', 'never')?>
+	
+	<?php  $this->headMeta()->appendName('revisit', '1 days')?>
+	<?php  $this->headMeta()->appendName('revisit-after', '1 days')?>
+	<?php  $this->headMeta()->appendName('distribution', 'global')?>
+	<?php echo $this->headMeta()->appendName('generator', 'Zend Framework '.\Zend\Version\Version::VERSION)?>
+	
+    <!-- Le styles -->
+    <?php
+				
+				echo $this->headLink ( array (
+						'rel' => 'shortcut icon',
+						'type' => 'image/vnd.microsoft.icon',
+						'href' => $this->basePath ( '/images/favicon.ico' ) 
+				) )->prependStylesheet ( $this->basePath ( '/css/bootstrap-responsive.css' ) )->prependStylesheet ( $this->basePath ( '/css/style.css' ) )->prependStylesheet ( $this->basePath ( '/css/bootstrap.css' ) )->prependStylesheet ( $this->basePath ( '/css/layout.css' ) )?>
+
+    <!-- Scripts -->
+    <?php
+				
+				echo $this->headScript ()->prependFile ( $this->basePath () . '/js/bootstrap.min.js' )->prependFile ( $this->basePath () . '/js/jquery.js' )->prependFile ( $this->basePath () . '/js/html5.js', 'text/javascript', array (
+						'conditional' => 'lt IE 9' 
+				) );
+				?>
+
+
+</head>
+
+<body>
+
+
+
+	<div class="container">
+
+      <?php echo $this->content; ?>
+	</div>
+	<hr>
+	<footer> </footer>
+
+	<!-- /container -->
+	
+  <?php echo $this->inlineScript()?>
+  </body>
+</html>

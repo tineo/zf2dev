@@ -1,0 +1,51 @@
+<!-- <div><?=$this->data;?></div>
+
+<div>
+	<pre><?/*=var_dump($this->dump);*/?></pre>
+</div>
+
+ -->
+<script type="text/javascript">
+$(function() {
+$(".new-gallery").click(function(){
+	alert("backend/item/add/gallery/"+$(this).attr("section"));
+	window.location = "/backend/index/add/gallery/"+$(this).attr("section");
+	
+});
+
+$(".new-item").click(function(){
+	alert("backend/item/add/item/"+$(this).attr("gallery"));
+	window.location =  "/backend/index/add/item/"+$(this).attr("gallery");
+});
+});
+</script>
+
+<a class="btn btn-success">Nueva Section</a>
+<? foreach ( $this->sections as $s ) {?>
+
+<div class="row">
+
+	<div class="span12">
+		<h3><?=$s["descripcion"]; ?></h3>
+		<a class="btn btn-success new-gallery" section="<?=$s["id"]; ?>">Nueva Galeria</a>
+	
+			<? foreach ( $s["galerias"] as $g ) {?>
+			
+			<div class="span11"
+			style="background: #ddd; padding: 5px; margin: 10px;">
+
+			<div class="" style="padding: 5px; margin: 10px;">
+				<b><?=$g["descripcion"]; ?></b><a class="btn btn-success new-item"	gallery="<?=$g["id"]; ?>">Agregar imagen</a>
+			</div>
+				<? foreach ( $g["items"] as $i ) {?>
+					<div class="span1">
+				<img src="<?=$i["path_thumb"]; ?>" />
+			</div>
+				<? }?>
+				</div>
+			<? } ?>
+</div>
+</div>
+<? } ?>
+
+

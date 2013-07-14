@@ -1,0 +1,42 @@
+<?php
+
+
+
+
+
+$form = $this->form;
+
+
+
+//$form->setAttribute('action',$this->url('backend',array('controller'=>'index', 'action' => 'add')));
+$form->prepare();
+
+
+
+
+echo $form->getName();
+
+
+if($form->getName() == "Gallery" ){
+
+echo $this->form()->openTag($form);
+echo $this->formHidden($form->get('id_section'));
+echo $this->formRow($form->get('description'));
+echo $this->formRow($form->get('slug'));
+echo $this->formRow($form->get('comentario'));
+echo $this->formSubmit($form->get('submit'));
+echo $this->form()->closeTag();
+
+
+} elseif ($form->getName() =="Item"){
+
+	echo $this->form()->openTag($form);
+	echo $this->formHidden($form->get('id_gallery'));
+	echo $this->formRow($form->get('description'));
+	echo $this->formRow($form->get('fileupload'));
+	echo $this->formRow($form->get('comentario'));
+	echo $this->formSubmit($form->get('submit'));
+	echo $this->form()->closeTag();
+}
+
+?>
